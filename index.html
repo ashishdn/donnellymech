@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donnelly Mechanical — NYC's Premier Commercial HVAC Provider Since 1989</title>
+<meta name="description" content="Donnelly Mechanical is New York City's premier provider of commercial HVAC service, maintenance and construction, as well as energy solutions — for over 30 years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root{
+  --navy:#101E32; --navy-d:#0B1626; --navy-m:#13273F;
+  --blue:#174B78; --blue-e:#2878B9; --steel:#B7C9D8;
+  --bg:#F4F6F8; --white:#FFFFFF; --text:#182536; --muted:#5B6878;
+  --line:rgba(16,30,50,.10); --line-l:rgba(255,255,255,.12);
+  --f-head:Manrope,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --sh-sm:0 1px 2px rgba(16,30,50,.05),0 6px 18px rgba(16,30,50,.06);
+  --sh-lg:0 2px 6px rgba(16,30,50,.06),0 28px 56px -18px rgba(16,30,50,.28);
+  --wrap:1280px; --pad:104px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:var(--f-body);color:var(--text);background:var(--white);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--f-head);color:var(--navy);line-height:1.08;letter-spacing:-.025em;font-weight:700}
+svg:has(> use){aspect-ratio:1/1;height:auto;flex:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
+.mono{font-family:var(--f-mono);font-weight:500;letter-spacing:.06em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:2px solid var(--blue-e);outline-offset:3px}
+
+/* type */
+.kicker{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-e)}
+.kicker::before{content:"";width:8px;height:8px;border:1.5px solid currentColor;transform:rotate(45deg)}
+.dark .kicker{color:#6FB0E6}
+.h2{font-size:clamp(32px,3.6vw,52px)}
+.lead{font-size:clamp(16.5px,1.2vw,18.5px);color:var(--muted);max-width:58ch}
+.dark{background:var(--navy);color:#fff}
+.dark h2,.dark h3,.dark h4{color:#fff}
+.dark .lead{color:rgba(255,255,255,.68)}
+.sec{padding:var(--pad) 0;position:relative}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;margin-bottom:52px}
+.sec-head h2{margin-top:16px;max-width:17ch}
+.sec-head .lead{max-width:46ch}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:var(--f-head);font-weight:700;font-size:14.5px;padding:16px 26px;border-radius:3px;white-space:nowrap;transition:background-color .3s ease,color .3s ease,box-shadow .3s ease,border-color .3s ease}
+.btn svg{width:16px;transition:transform .3s ease}
+.btn:hover svg{transform:translateX(4px)}
+.btn:active{box-shadow:inset 0 0 0 999px rgba(0,0,0,.08)}
+.btn-blue{background:var(--blue-e);color:#fff}
+.btn-blue:hover{background:#3389CF;box-shadow:0 12px 28px -10px rgba(40,120,185,.7)}
+.btn-line{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.btn-line:hover{box-shadow:inset 0 0 0 1.5px #fff;background:rgba(255,255,255,.06)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--blue)}
+.btn-white{background:#fff;color:var(--navy)}
+.btn-white:hover{background:var(--steel)}
+.tlink{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-head);font-weight:700;font-size:14.5px;color:var(--blue-e)}
+.tlink svg{width:16px;transition:transform .3s ease}
+.tlink:hover svg{transform:translateX(5px)}
+
+/* image surfaces (built-in illustrations) */
+.img{position:relative;overflow:hidden;background:var(--navy-m)}
+.img .scene{position:absolute;inset:0;width:100%;height:100%;display:block;transition:transform 1.2s var(--ease)}
+.scene .spin{transform-box:fill-box;transform-origin:center;animation:spin 5s linear infinite}
+.scene .flow{stroke-dasharray:5 12;animation:flow 2.6s linear infinite}
+.scene .blink{animation:blink 2.4s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes flow{to{stroke-dashoffset:-136}}
+@keyframes blink{50%{opacity:.25}}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.hdr{position:fixed;inset:0 0 auto;z-index:100;transition:background-color .4s ease,box-shadow .4s ease}
+.util{height:36px;overflow:hidden;border-bottom:1px solid var(--line-l);font-size:12.5px;color:rgba(255,255,255,.65);transition:height .4s var(--ease),opacity .3s}
+.util .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}
+.util-r{display:flex;gap:28px}
+.util a{display:inline-flex;gap:8px;align-items:center;transition:color .25s}
+.util a:hover{color:#fff}
+.util svg{width:13px;color:#6FB0E6}
+.bar{height:76px;transition:height .4s var(--ease)}
+.bar .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.hdr.scrolled{background:rgba(11,22,38,.92);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:0 1px 0 var(--line-l)}
+.hdr.scrolled .util{height:0;opacity:0;border:0}
+.hdr.scrolled .bar{height:66px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;flex:none}
+.logo-mark{width:38px;height:38px;display:grid;place-items:center;background:var(--blue-e);border-radius:3px}
+.logo-mark svg{width:24px;height:24px;color:#fff}
+.logo-t{font-family:var(--f-head);line-height:1}
+.logo-t b{display:block;font-size:18px;font-weight:800;letter-spacing:.06em}
+.logo-t small{font-size:9.5px;letter-spacing:.38em;color:var(--steel);font-weight:600}
+.menu ul{display:flex;list-style:none;height:76px}
+.hdr.scrolled .menu ul{height:66px}
+.menu li{position:relative;display:flex;align-items:center}
+.menu li > a,.menu li > button{display:flex;align-items:center;gap:6px;padding:0 18px;height:100%;font-size:14.5px;font-weight:500;color:rgba(255,255,255,.82);transition:color .25s}
+.menu li > button svg{width:10px;transition:transform .3s}
+.menu li:hover > a,.menu li:hover > button,.menu li:focus-within > button{color:#fff}
+.menu li:hover > button svg{transform:rotate(180deg)}
+.menu li > a::after,.menu li > button::after{content:"";position:absolute;left:18px;right:18px;bottom:18px;height:2px;background:var(--blue-e);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.menu li:hover > a::after,.menu li:hover > button::after{transform:scaleX(1)}
+.drop{position:absolute;top:100%;left:0;min-width:260px;background:#fff;color:var(--text);border-radius:4px;box-shadow:var(--sh-lg);padding:14px;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.drop::before{content:"";position:absolute;top:-6px;left:28px;width:12px;height:12px;background:#fff;transform:rotate(45deg)}
+.has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:none}
+.drop a{display:block;padding:9px 12px;font-size:14px;border-radius:3px;transition:background-color .2s,color .2s}
+.drop a:hover{background:var(--bg);color:var(--blue-e)}
+.mega{left:-120px;width:780px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:22px}
+.mega h5{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-e);padding:4px 12px 10px;font-weight:500}
+.mega::before{left:160px}
+.bar-r{display:flex;align-items:center;gap:14px}
+.bar-r .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;width:44px;height:44px;position:relative;border:1px solid var(--line-l);border-radius:3px}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:#fff;transition:transform .35s var(--ease),opacity .2s,top .35s var(--ease)}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:21px}.burger span:nth-child(3){top:26px}
+.nav-open .burger span:nth-child(1){top:21px;transform:rotate(45deg)}
+.nav-open .burger span:nth-child(2){opacity:0}
+.nav-open .burger span:nth-child(3){top:21px;transform:rotate(-45deg)}
+.mnav{position:fixed;inset:0;z-index:90;background:var(--navy-d);padding:96px 24px 32px;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+.nav-open .mnav{opacity:1;visibility:visible}
+.mnav details,.mnav > a{border-bottom:1px solid var(--line-l)}
+.mnav summary,.mnav > a{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-family:var(--f-head);font-size:22px;font-weight:700;color:#fff;list-style:none;cursor:pointer}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary::after{content:"+";font-weight:400;color:#6FB0E6;font-size:26px;transition:transform .3s}
+.mnav details[open] summary::after{transform:rotate(45deg)}
+.mnav details a{display:block;padding:8px 0 8px 14px;color:rgba(255,255,255,.7);font-size:15.5px;border-left:1px solid var(--line-l)}
+.mnav details div{padding-bottom:16px}
+.mnav .btn{width:100%;margin-top:28px}
+.mnav .m-foot{margin-top:22px;color:rgba(255,255,255,.55);font-size:14px;text-align:center}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;color:#fff;background:var(--navy-d);overflow:hidden;min-height:min(860px,100vh);display:flex;flex-direction:column;justify-content:flex-end;padding-top:150px}
+.hero-bg{position:absolute;inset:-40px 0 0 0}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,22,38,.96) 0%,rgba(11,22,38,.82) 38%,rgba(11,22,38,.25) 75%,rgba(11,22,38,.35)),linear-gradient(0deg,rgba(11,22,38,.95) 0%,transparent 40%)}
+.hero-deco{position:absolute;inset:0;pointer-events:none}
+.hero-deco .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(183,201,216,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(183,201,216,.06) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(90deg,#000 0%,transparent 70%);-webkit-mask-image:linear-gradient(90deg,#000 0%,transparent 70%)}
+.hero-deco .ring{position:absolute;right:6%;top:18%;width:420px;height:420px;animation:spin 80s linear infinite;opacity:.5}
+.hero-in{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:end;padding-bottom:64px;width:100%}
+.hero h1{color:#fff;font-size:clamp(40px,5.3vw,78px);margin:22px 0 24px;letter-spacing:-.035em}
+.hero h1 .ln.soft > span{color:var(--steel)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln > span{display:block;transform:translateY(105%);animation:rise 1s var(--ease) forwards}
+.hero h1 .ln:nth-child(2) > span{animation-delay:.1s}
+.hero h1 .ln:nth-child(3) > span{animation-delay:.2s}
+@keyframes rise{to{transform:none}}
+.hero .lead{color:rgba(255,255,255,.72);max-width:54ch}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-card{padding:26px 26px 24px;border-radius:4px;background:rgba(16,30,50,.55);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(183,201,216,.18);position:relative}
+.hero-card::before{content:"";position:absolute;left:-1px;top:-1px;width:40px;height:40px;border-left:2px solid var(--blue-e);border-top:2px solid var(--blue-e)}
+.hc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.live{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:#8FC5F0}
+.live i{width:8px;height:8px;border-radius:50%;background:#4FB0FF;box-shadow:0 0 0 0 rgba(79,176,255,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(79,176,255,0)}100%{box-shadow:0 0 0 0 rgba(79,176,255,0)}}
+.hero-card h3{color:#fff;font-size:22px;margin-bottom:8px}
+.hero-card p{font-size:14.5px;color:rgba(255,255,255,.7);margin-bottom:18px}
+.hero-card .call{display:flex;align-items:center;gap:14px;padding-top:16px;border-top:1px solid var(--line-l)}
+.hero-card .call .ic{width:42px;height:42px;border-radius:3px;background:var(--blue-e);display:grid;place-items:center}
+.hero-card .call svg{width:18px}
+.hero-card .call small{display:block;font-size:11.5px;color:rgba(255,255,255,.55)}
+.hero-card .call b{font-family:var(--f-head);font-size:19px}
+.stats{position:relative;border-top:1px solid var(--line-l);background:rgba(11,22,38,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+.stat{padding:26px 0 26px 26px;border-left:1px solid var(--line-l)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--f-head);font-size:clamp(28px,2.6vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.stat b em{font-style:normal;color:#6FB0E6}
+.stat span{font-size:13px;color:rgba(255,255,255,.6)}
+
+/* =========================================================
+   CARDS — outer box never moves (stable hover), inner lifts
+   ========================================================= */
+.card{position:relative}
+.card-in{display:flex;flex-direction:column;height:100%;position:relative;overflow:hidden;border-radius:4px;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover .card-in{transform:translateY(-6px);box-shadow:var(--sh-lg)}
+.card:hover .img .scene{transform:scale(1.06)}
+.num{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em}
+.arrow-btn{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid currentColor;transition:background-color .3s,border-color .3s,color .3s;flex:none}
+.arrow-btn svg{width:16px;transform:rotate(-45deg);transition:transform .35s var(--ease)}
+.card:hover .arrow-btn{background:var(--blue-e);border-color:var(--blue-e);color:#fff}
+.card:hover .arrow-btn svg{transform:rotate(0)}
+
+/* SERVICES */
+.services{background:var(--bg)}
+.svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.svc h3{font-size:clamp(24px,2.2vw,32px);margin:12px 0 12px}
+.svc p{font-size:15.5px}
+.svc-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:auto;padding-top:26px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:8px}
+.svc-tags span{font-size:12px;padding:6px 11px;border-radius:2px;border:1px solid currentColor;opacity:.7}
+
+.svc-pm{grid-column:span 7;grid-row:span 2}
+.svc-pm .card-in{color:#fff;min-height:640px;justify-content:flex-end;padding:40px}
+.svc-pm .img{position:absolute;inset:0}
+.svc-pm .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,38,0) 25%,rgba(11,22,38,.7) 60%,rgba(11,22,38,.97))}
+.svc-pm .body{position:relative;z-index:2;display:flex;flex-direction:column}
+.svc-pm h3{color:#fff;font-size:clamp(32px,3.2vw,48px)}
+.svc-pm p{color:rgba(255,255,255,.75);max-width:48ch}
+.svc-pm .num{color:#6FB0E6}
+.svc-pm .flag{position:absolute;top:28px;left:28px;z-index:2;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;padding:8px 12px;background:var(--blue-e);color:#fff;border-radius:2px}
+
+.svc-247 .card-in{background:linear-gradient(145deg,var(--blue) 0%,var(--navy) 85%);color:#fff;padding:34px;min-height:310px}
+.svc-247{grid-column:span 5}
+.svc-247 .big{position:absolute;right:-6px;bottom:-34px;font-family:var(--f-head);font-weight:800;font-size:170px;line-height:1;letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1px rgba(183,201,216,.22);pointer-events:none}
+.svc-247 h3{color:#fff}
+.svc-247 p{color:rgba(255,255,255,.72);max-width:40ch;position:relative}
+.svc-247 .num{color:#8FC5F0}
+.svc-ic{width:52px;height:52px;border-radius:4px;display:grid;place-items:center;margin-bottom:22px}
+.svc-ic svg{width:26px}
+.svc-247 .svc-ic{background:rgba(255,255,255,.1);color:#8FC5F0;border:1px solid rgba(183,201,216,.2)}
+
+.svc-rep{grid-column:span 5}
+.svc-rep .card-in{background:#fff;box-shadow:var(--sh-sm);display:grid;grid-template-columns:42% 1fr;min-height:310px}
+.svc-rep .img{min-height:100%}
+.svc-rep .body{padding:30px 28px;display:flex;flex-direction:column}
+.svc-rep .num{color:var(--blue-e)}
+.svc-rep p{color:var(--muted);font-size:15px}
+.svc-rep .arrow-btn{color:var(--navy)}
+
+.svc-con{grid-column:span 5}
+.svc-con .card-in{background:transparent;overflow:visible}
+.svc-con .img{height:300px;border-radius:4px}
+.svc-con .body{position:relative;margin:-70px 22px 0;background:#fff;padding:30px;border-radius:4px;box-shadow:var(--sh-lg);border-top:3px solid var(--blue-e);display:flex;flex-direction:column;flex:1}
+.svc-con .num{color:var(--blue-e)}
+.svc-con p{color:var(--muted);font-size:15px}
+.svc-con .arrow-btn{color:var(--navy)}
+.svc-con:hover .card-in{box-shadow:none}
+
+.svc-iaq{grid-column:span 7}
+.svc-iaq .card-in{background:var(--navy);color:#fff;display:grid;grid-template-columns:1fr 1fr;min-height:100%}
+.svc-iaq .body{padding:40px 36px;display:flex;flex-direction:column}
+.svc-iaq .img{min-height:340px}
+.svc-iaq h3{color:#fff}
+.svc-iaq p{color:rgba(255,255,255,.72)}
+.svc-iaq .num{color:#8FC5F0}
+.svc-iaq .svc-ic{background:var(--blue-e);color:#fff}
+.iaq-steps{display:flex;gap:6px;margin-top:18px;flex-wrap:wrap}
+.iaq-steps span{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;padding:6px 10px;background:rgba(40,120,185,.18);color:#A9D2F3;border-radius:2px}
+
+/* capabilities */
+.caps{margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border-radius:4px;box-shadow:var(--sh-sm)}
+.cap{padding:34px 34px 30px;position:relative}
+.cap + .cap{border-left:1px solid var(--line)}
+.cap::before{content:"";position:absolute;top:0;left:0;height:3px;width:56px;background:var(--blue-e);transition:width .5s var(--ease)}
+.cap:hover::before{width:100%}
+.cap h4{font-size:19px;margin-bottom:18px;display:flex;gap:12px;align-items:center}
+.cap h4 svg{width:22px;color:var(--blue-e)}
+.cap ul{list-style:none}
+.cap li a{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-top:1px solid var(--line);font-size:15px;color:var(--text);transition:color .25s}
+.cap li a svg{width:14px;color:var(--blue-e);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s}
+.cap li a:hover{color:var(--blue-e)}
+.cap li a:hover svg{opacity:1;transform:none}
+
+/* ABOUT */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-vis{position:relative;height:580px}
+.av-a{position:absolute;inset:0 16% 14% 0;border-radius:4px}
+.av-b{position:absolute;right:0;bottom:0;width:52%;height:48%;border-radius:4px;border:8px solid #fff;box-shadow:var(--sh-lg)}
+.av-tag{position:absolute;left:28px;top:28px;background:var(--blue-e);color:#fff;padding:20px 22px;border-radius:3px;z-index:2}
+.av-tag small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;opacity:.8}
+.av-tag b{font-family:var(--f-head);font-size:40px;line-height:1;letter-spacing:-.03em}
+.av-dim{position:absolute;left:-26px;top:0;bottom:14%;width:1px;background:var(--steel)}
+.av-dim::before,.av-dim::after{content:"";position:absolute;left:-6px;width:13px;height:1px;background:var(--steel)}
+.av-dim::before{top:0}.av-dim::after{bottom:0}
+.about h2{margin:16px 0 22px}
+.about p{color:var(--muted);margin-bottom:16px;max-width:58ch}
+.pull{font-family:var(--f-head);font-size:clamp(20px,1.7vw,24px);font-weight:600;color:var(--navy);line-height:1.4;letter-spacing:-.01em;padding:4px 0 4px 24px;border-left:3px solid var(--blue-e);margin:26px 0}
+.values{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:4px;margin:30px 0 32px}
+.values div{padding:18px 16px;text-align:center}
+.values div + div{border-left:1px solid var(--line)}
+.values svg{width:24px;color:var(--blue-e);margin:0 auto 8px}
+.values b{font-family:var(--f-head);font-size:14.5px;color:var(--navy)}
+.about-acts{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+
+/* DIFFERENCE */
+.diff{overflow:hidden}
+.diff-ring{position:absolute;left:-220px;bottom:-260px;width:620px;height:620px;opacity:.35;animation:spin 120s linear infinite reverse;pointer-events:none}
+.diff .sec-head h2{max-width:14ch}
+.diff-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-l);border-left:1px solid var(--line-l);position:relative}
+.dg{padding:36px 34px 38px;border-right:1px solid var(--line-l);border-bottom:1px solid var(--line-l);position:relative;transition:background-color .4s ease}
+.dg::after{content:"";position:absolute;inset:0;background:radial-gradient(420px 220px at 0 0,rgba(40,120,185,.22),transparent 70%);opacity:0;transition:opacity .4s ease;pointer-events:none}
+.dg:hover::after{opacity:1}
+.dg .ic{width:54px;height:54px;border-radius:4px;display:grid;place-items:center;background:rgba(40,120,185,.14);border:1px solid rgba(40,120,185,.35);color:#8FC5F0;margin-bottom:26px;transition:background-color .3s,color .3s}
+.dg:hover .ic{background:var(--blue-e);color:#fff}
+.dg .ic svg{width:26px}
+.dg .num{position:absolute;top:36px;right:34px;color:rgba(183,201,216,.45)}
+.dg h3{font-size:21px;margin-bottom:10px}
+.dg p{color:rgba(255,255,255,.62);font-size:15px}
+
+/* SWITCH BAND */
+.switch{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.switch::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(90deg,transparent,#000);-webkit-mask-image:linear-gradient(90deg,transparent,#000)}
+.switch .wrap{position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;padding-top:52px;padding-bottom:52px}
+.switch h2{color:#fff;font-size:clamp(26px,2.6vw,36px);margin-bottom:8px}
+.switch p{color:rgba(255,255,255,.78);max-width:60ch}
+
+/* INDUSTRIES — expanding panels */
+.ind-row{display:flex;gap:14px;height:500px}
+.ind{flex:1;position:relative;overflow:hidden;border-radius:4px;color:#fff;transition:flex-grow .7s var(--ease);min-width:0}
+.ind:hover,.ind.on{flex-grow:2.4}
+.ind .img{position:absolute;inset:0}
+.ind .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,38,.1) 30%,rgba(11,22,38,.92))}
+.ind-body{position:absolute;left:0;right:0;bottom:0;padding:28px;z-index:2}
+.ind .num{color:#8FC5F0;display:block;margin-bottom:10px}
+.ind h3{color:#fff;font-size:24px;white-space:nowrap}
+.ind p{font-size:14.5px;color:rgba(255,255,255,.72);max-width:34ch;max-height:0;opacity:0;overflow:hidden;transition:max-height .6s var(--ease),opacity .4s ease,margin .6s var(--ease)}
+.ind:hover p,.ind.on p{max-height:90px;opacity:1;margin-top:10px}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:280px 280px;gap:20px}
+.proj .card-in{color:#fff;justify-content:flex-end;padding:26px;height:100%}
+.proj .img{position:absolute;inset:0}
+.proj .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,22,38,0) 35%,rgba(11,22,38,.92));transition:opacity .4s}
+.proj .body{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.proj .cat{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8FC5F0;margin-bottom:8px;display:block}
+.proj h3{color:#fff;font-size:21px;line-height:1.2}
+.proj .arrow-btn{color:#fff;width:42px;height:42px}
+.proj-1{grid-row:span 2}
+.proj-1 h3{font-size:clamp(26px,2.4vw,34px)}
+.proj-row2{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.proj-row2 .proj{height:260px}
+.proj-note{margin-top:22px;font-size:13px;color:var(--muted);font-style:italic}
+
+/* TESTIMONIALS */
+.voices{background:var(--bg);overflow:hidden}
+.voices .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.vq{background:var(--navy);color:#fff;border-radius:4px;padding:52px 48px;position:relative;overflow:hidden}
+.vq::before{content:"";position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;border:1px solid rgba(40,120,185,.35)}
+.vq::after{content:"";position:absolute;right:-20px;top:-20px;width:160px;height:160px;border-radius:50%;border:1px solid rgba(40,120,185,.25)}
+.vq .qm{width:48px;height:48px;color:var(--blue-e);margin-bottom:22px}
+.vq p{font-family:var(--f-head);font-size:clamp(21px,1.9vw,27px);line-height:1.4;font-weight:600;letter-spacing:-.01em;color:#fff}
+.vq p em{font-style:normal;color:#8FC5F0}
+.vq small{display:block;margin-top:22px;color:rgba(255,255,255,.55);font-size:13.5px}
+.who h2{margin:16px 0 18px}
+.who-list{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.who-item{background:#fff;padding:18px 18px;border-radius:4px;box-shadow:var(--sh-sm);border-left:3px solid var(--blue-e)}
+.who-item b{display:block;font-family:var(--f-head);color:var(--navy);font-size:15.5px}
+.who-item span{font-size:13px;color:var(--muted)}
+.mock-note{margin-top:18px;font-size:12.5px;color:var(--muted);font-style:italic}
+
+/* INSIGHTS */
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ins .card-in{background:#fff;border:1px solid var(--line);padding:30px;min-height:240px}
+.ins .meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:46px}
+.ins .meta span{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--blue-e);text-transform:uppercase}
+.ins h3{font-size:21px;line-height:1.3;margin-bottom:auto}
+.ins .tlink{margin-top:26px}
+.ins .arrow-btn{color:var(--navy);width:40px;height:40px}
+
+/* CTA / CONTACT */
+.cta{overflow:hidden}
+.cta .bg{position:absolute;inset:0;opacity:.35}
+.cta .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 35%,rgba(16,30,50,.55))}
+.cta .wrap{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.cta h2{font-size:clamp(36px,4.2vw,60px);margin:16px 0 20px}
+.c-list{margin-top:34px}
+.c-item{display:flex;gap:18px;align-items:center;padding:18px 0;border-top:1px solid var(--line-l)}
+.c-item:last-child{border-bottom:1px solid var(--line-l)}
+.c-item .ic{width:48px;height:48px;border-radius:4px;border:1px solid rgba(40,120,185,.5);display:grid;place-items:center;color:#8FC5F0;flex:none;transition:background-color .3s,color .3s}
+a.c-item:hover .ic{background:var(--blue-e);color:#fff}
+.c-item .ic svg{width:20px}
+.c-item small{display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.5);text-transform:uppercase}
+.c-item b{font-family:var(--f-head);font-size:18px;font-weight:600;overflow-wrap:anywhere}
+.form{background:#fff;color:var(--text);border-radius:4px;padding:40px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5);position:relative}
+.form::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-e),var(--blue));border-radius:4px 4px 0 0}
+.form h3{font-size:26px;margin-bottom:6px}
+.form > div > p{color:var(--muted);font-size:14.5px;margin-bottom:26px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.fld input,.fld select,.fld textarea{width:100%;font:inherit;font-size:15px;color:var(--text);background:var(--bg);border:1px solid transparent;border-radius:3px;padding:13px 14px;outline:none;transition:border-color .25s,background-color .25s,box-shadow .25s}
+.fld textarea{resize:vertical;min-height:100px}
+.fld input:focus,.fld select:focus,.fld textarea:focus{background:#fff;border-color:var(--blue-e);box-shadow:0 0 0 4px rgba(40,120,185,.12)}
+.form .btn{width:100%;margin-top:6px}
+.f-ok{display:none;text-align:center;padding:50px 0}
+.f-ok svg{width:56px;color:var(--blue-e);margin:0 auto 16px}
+.form.sent .f-in{display:none}.form.sent .f-ok{display:block}
+
+/* FOOTER */
+footer{background:var(--navy-d);color:rgba(255,255,255,.6);padding:76px 0 28px;font-size:14.5px}
+.ft{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:48px;border-bottom:1px solid var(--line-l)}
+.ft h4{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:500;margin-bottom:20px}
+.ft ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.ft ul a{transition:color .25s}
+.ft ul a:hover{color:#8FC5F0}
+.ft-brand p{margin:22px 0 24px;max-width:38ch}
+.socials{display:flex;gap:10px}
+.socials a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-l);display:grid;place-items:center;font-family:var(--f-head);font-weight:700;font-size:13px;color:#fff;transition:background-color .3s,border-color .3s}
+.socials a:hover{background:var(--blue-e);border-color:var(--blue-e)}
+.fb{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:26px;font-size:13px}
+.fb a:hover{color:#fff}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:1200px){
+  .menu li > a,.menu li > button{padding:0 12px}
+  .mega{left:-60px;width:700px}
+  .about .wrap{gap:56px}
+}
+@media (max-width:1024px){
+  :root{--pad:80px}
+  .wrap{padding:0 28px}
+  .menu,.bar-r .btn,.util{display:none}
+  .burger{display:block}
+  .bar{height:68px}
+  .hero{min-height:0;padding-top:130px}
+  .hero-in{grid-template-columns:1fr;gap:36px;padding-bottom:48px}
+  .hero-card{max-width:460px}
+  .hero-deco .ring{width:300px;height:300px;right:-80px;top:12%}
+  .stats .wrap{grid-template-columns:repeat(3,1fr)}
+  .stat{padding:20px 0 20px 20px}
+  .stat:nth-child(4){border-left:0;padding-left:0}
+  .stat:nth-child(n+4){border-top:1px solid var(--line-l)}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:18px}
+  .svc-pm,.svc-247,.svc-rep,.svc-con,.svc-iaq{grid-column:span 12;grid-row:auto}
+  .svc-pm .card-in{min-height:540px}
+  .caps{grid-template-columns:1fr}
+  .cap + .cap{border-left:0;border-top:1px solid var(--line)}
+  .about .wrap{grid-template-columns:1fr}
+  .about-vis{height:480px}
+  .av-dim{display:none}
+  .diff-grid{grid-template-columns:1fr 1fr}
+  .switch .wrap{flex-direction:column;align-items:flex-start}
+  .ind-row{flex-direction:column;height:auto}
+  .ind{min-height:220px;flex:none}
+  .ind:hover,.ind.on{flex-grow:0}
+  .ind p{max-height:none;opacity:1;margin-top:8px}
+  .proj-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .proj-1{grid-column:span 2;grid-row:auto;height:400px}
+  .proj-grid .proj:not(.proj-1){height:260px}
+  .proj-row2{grid-template-columns:1fr 1fr}
+  .proj-row2 .proj:last-child{grid-column:span 2}
+  .voices .wrap{grid-template-columns:1fr;gap:44px}
+  .ins-grid{grid-template-columns:1fr 1fr}
+  .ins-grid .ins:last-child{grid-column:span 2}
+  .cta .wrap{grid-template-columns:1fr;gap:44px}
+  .ft{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  :root{--pad:64px}
+  .wrap{padding:0 20px}
+  .bar{height:64px}
+  .logo-t b{font-size:16px}
+  .logo-mark{width:34px;height:34px}
+  .hero{padding-top:108px}
+  .hero h1{margin:16px 0 18px}
+  .hero-ctas .btn{width:100%}
+  .hero-card{padding:22px}
+  .hero-deco .ring{display:none}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .stat,.stat:nth-child(4){padding:18px 0 18px 18px;border-left:1px solid var(--line-l);border-top:1px solid var(--line-l)}
+  .stat:nth-child(odd){border-left:0;padding-left:0}
+  .stat:first-child{border-top:0}.stat:nth-child(2){border-top:0}
+  .stat:last-child{grid-column:span 2;border-left:0;padding-left:0}
+  .sec-head{margin-bottom:36px}
+  .svc-pm .card-in{min-height:500px;padding:26px}
+  .svc-pm .flag{top:20px;left:20px}
+  .svc-247 .card-in{padding:26px}
+  .svc-rep .card-in{grid-template-columns:1fr}
+  .svc-rep .img{min-height:200px}
+  .svc-rep .body{padding:26px}
+  .svc-con .img{height:220px}
+  .svc-con .body{margin:-50px 12px 0;padding:24px}
+  .svc-iaq .card-in{grid-template-columns:1fr}
+  .svc-iaq .img{min-height:240px;order:-1}
+  .svc-iaq .body{padding:28px 26px}
+  .caps{margin-top:40px}
+  .cap{padding:28px 24px}
+  .about-vis{height:380px}
+  .av-a{inset:0 10% 18% 0}
+  .av-b{width:58%;height:44%;border-width:6px}
+  .av-tag{left:16px;top:16px;padding:14px 16px}
+  .av-tag b{font-size:30px}
+  .values{grid-template-columns:1fr 1fr}
+  .values div:nth-child(3){border-left:0}
+  .values div:nth-child(n+3){border-top:1px solid var(--line)}
+  .diff-grid{grid-template-columns:1fr}
+  .dg{padding:30px 24px}
+  .dg .num{top:30px;right:24px}
+  .switch .btn{width:100%}
+  .proj-grid,.proj-row2{grid-template-columns:1fr}
+  .proj-1,.proj-row2 .proj:last-child{grid-column:auto}
+  .proj-1{height:340px}
+  .proj-grid .proj:not(.proj-1),.proj-row2 .proj{height:240px}
+  .vq{padding:36px 26px}
+  .who-list{grid-template-columns:1fr}
+  .ins-grid{grid-template-columns:1fr}
+  .ins-grid .ins:last-child{grid-column:auto}
+  .ins .meta{margin-bottom:28px}
+  .form{padding:28px 20px}
+  .frow{grid-template-columns:1fr;gap:0}
+  .ft{grid-template-columns:1fr;gap:36px}
+  footer{padding:56px 0 24px}
+}
+/* v1.1 fixes */
+.stat b span{font-size:inherit;color:inherit}
+.dark .form h3{color:var(--navy)}
+.ind h3{white-space:normal;font-size:20px;line-height:1.15}
+.ind.on h3{font-size:24px}
+.values svg{display:block}
+@media (max-width:1024px){.ind h3{font-size:22px}.ind .img::after{background:linear-gradient(180deg,rgba(11,22,38,.25) 10%,rgba(11,22,38,.95))}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.hero h1 .ln>span{transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ICONS -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9l7 7 7-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.2 7-12A7 7 0 0 0 5 9c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></symbol>
+  <symbol id="i-fan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 10c0-4 1-7 4-7 2 0 3 2 2 4-1 1.5-3.5 2.5-6 3zM14 12c4 0 7 1 7 4 0 2-2 3-4 2-1.5-1-2.5-3.5-3-6zM12 14c0 4-1 7-4 7-2 0-3-2-2-4 1-1.5 3.5-2.5 6-3zM10 12c-4 0-7-1-7-4 0-2 2-3 4-2 1.5 1 2.5 3.5 3 6z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8M3 21l6-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.6-4.5M4 4v3h3M4 13a8 8 0 0 0 14.6 4.5M20 20v-3h-3"/></symbol>
+  <symbol id="i-crane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V3l14 3H3M6 6l4-3M18 6v5M16 11h4v3h-4zM3 21h8"/></symbol>
+  <symbol id="i-air" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M3 14l9 5 9-5"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 18a9 9 0 1 1 16 0"/><path d="M12 14l4-5"/><circle cx="12" cy="14" r="1.5"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-4-4M20 16H6l4 4"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4M8 15l2.5 2.5L16 13"/></symbol>
+  <symbol id="i-stack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="4" y="3" width="16" height="5"/><rect x="4" y="10" width="16" height="5"/><rect x="4" y="17" width="16" height="4"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 7M18 14.8c1.9.7 3.1 2.5 3.5 5.2"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor"><path d="M4 18v-6c0-4 2-6.5 6-7.5l.6 1.6C8 7 7.4 8.8 7.3 11H10v7H4zm10 0v-6c0-4 2-6.5 6-7.5l.6 1.6C18 7 17.4 8.8 17.3 11H20v7h-6z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+</defs>
+</svg>
+
+<!-- ===================== HEADER ===================== -->
+<header class="hdr" id="hdr">
+  <div class="util">
+    <div class="wrap">
+      <span>Donnelly Mechanical — An Equans Company</span>
+      <div class="util-r">
+        <a href="#"><svg><use href="#i-user"/></svg>Client Portal</a>
+        <a href="tel:+17188861500"><svg><use href="#i-phone"/></svg>718-886-1500</a>
+      </div>
+    </div>
+  </div>
+  <div class="bar">
+    <div class="wrap">
+      <a href="#top" class="logo" aria-label="Donnelly Mechanical home">
+        <span class="logo-mark"><svg><use href="#i-fan"/></svg></span>
+        <span class="logo-t"><b>DONNELLY</b><small>MECHANICAL</small></span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <ul>
+          <li class="has-drop">
+            <button aria-haspopup="true">Services <svg><use href="#i-down"/></svg></button>
+            <div class="drop mega">
+              <div><h5>Installation &amp; Upgrades</h5><a href="#services">Replacements and Upgrades</a><a href="#services">Construction and Renovations</a><a href="#services">Financing</a></div>
+              <div><h5>Maintenance &amp; Service</h5><a href="#services">Preventive Maintenance</a><a href="#services">24/7 Service and Repair</a><a href="#services">Building Engineering Services</a><a href="#services">Multi-Site Service Contracts</a></div>
+              <div><h5>Specialized Solutions</h5><a href="#services">IAQ Assessment &amp; Certification</a><a href="#services">Systems Analysis &amp; Commissioning</a><a href="#services">NYC Cooling Tower Registration</a><a href="#services">Local Law 97</a></div>
+            </div>
+          </li>
+          <li class="has-drop">
+            <button aria-haspopup="true">Industries <svg><use href="#i-down"/></svg></button>
+            <div class="drop"><a href="#industries">Class-A Office</a><a href="#industries">Hospitals &amp; Healthcare</a><a href="#industries">Law Firms</a><a href="#industries">Financial</a><a href="#industries">Data Centers</a></div>
+          </li>
+          <li><a href="#projects">Projects</a></li>
+          <li class="has-drop">
+            <button aria-haspopup="true">About <svg><use href="#i-down"/></svg></button>
+            <div class="drop"><a href="#about">About Us</a><a href="#about">Your Donnelly Team</a><a href="#about">Donnelly Cares</a><a href="#about">Safety</a><a href="#about">Company Culture</a><a href="#about">Career Opportunities</a><a href="#about">Newsroom</a></div>
+          </li>
+          <li><a href="#insights">Resources</a></li>
+        </ul>
+      </nav>
+      <div class="bar-r">
+        <a href="#contact" class="btn btn-blue">Get in Touch <svg><use href="#i-arrow"/></svg></a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" aria-label="Mobile">
+  <details><summary>Services</summary><div>
+    <a href="#services">Replacements and Upgrades</a><a href="#services">Construction and Renovations</a><a href="#services">Preventive Maintenance</a><a href="#services">24/7 Service and Repair</a><a href="#services">Building Engineering Services</a><a href="#services">Indoor Air Quality</a><a href="#services">Local Law 97</a>
+  </div></details>
+  <details><summary>Industries</summary><div>
+    <a href="#industries">Class-A Office</a><a href="#industries">Hospitals &amp; Healthcare</a><a href="#industries">Law Firms</a><a href="#industries">Financial</a><a href="#industries">Data Centers</a>
+  </div></details>
+  <a href="#projects">Projects <span>→</span></a>
+  <a href="#about">About <span>→</span></a>
+  <a href="#insights">Resources <span>→</span></a>
+  <a href="#contact" class="btn btn-blue">Get in Touch</a>
+  <p class="m-foot">718-886-1500 · Client Portal</p>
+</nav>
+
+<main id="top">
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-label="Introduction">
+  <div class="hero-bg img" data-scene="rooftop" data-seed="5" data-parallax="0.15"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-deco">
+    <div class="grid"></div>
+    <svg class="ring" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+      <circle cx="200" cy="200" r="190" stroke="#B7C9D8" stroke-opacity=".35" stroke-dasharray="2 8"/>
+      <circle cx="200" cy="200" r="150" stroke="#2878B9" stroke-opacity=".6"/>
+      <circle cx="200" cy="200" r="110" stroke="#B7C9D8" stroke-opacity=".2" stroke-dasharray="40 10"/>
+      <path d="M200 0v40M200 360v40M0 200h40M360 200h40" stroke="#B7C9D8" stroke-opacity=".5"/>
+      <circle cx="350" cy="200" r="5" fill="#2878B9"/>
+    </svg>
+  </div>
+
+  <div class="wrap hero-in">
+    <div>
+      <p class="kicker rv in">Est. 1989 · New York City</p>
+      <h1>
+        <span class="ln"><span>Trusted and proven.</span></span>
+        <span class="ln soft"><span>NYC's premier commercial</span></span>
+        <span class="ln soft"><span>HVAC provider.</span></span>
+      </h1>
+      <p class="lead rv d2">Innovative commercial HVAC service, maintenance and construction for New York City's most prominent commercial organizations, for over 30 years.</p>
+      <div class="hero-ctas rv d3">
+        <a href="#services" class="btn btn-blue">Explore Our Services <svg><use href="#i-arrow"/></svg></a>
+        <a href="#contact" class="btn btn-line">Contact Our Team</a>
+      </div>
+    </div>
+    <aside class="hero-card rv d3">
+      <div class="hc-top"><span class="live"><i></i>SERVICE &amp; REPAIR</span><span class="mono" style="font-size:11px;color:rgba(255,255,255,.45)">NYC ZONES</span></div>
+      <h3>24/7 Commercial HVAC Service</h3>
+      <p>Our zoning system lets factory-trained technicians reach your site fast, by van or on foot.</p>
+      <a class="call" href="tel:+17188861500"><span class="ic"><svg><use href="#i-phone"/></svg></span><span><small>New &amp; existing clients</small><b>718-886-1500</b></span></a>
+    </aside>
+  </div>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b data-count="1989" data-from="1960">1989</b><span>Founded in New York</span></div>
+      <div class="stat"><b><span data-count="30">30</span><em>+</em></b><span>Years of service</span></div>
+      <div class="stat"><b><span data-count="200">200</span><em>+</em></b><span>Employees</span></div>
+      <div class="stat"><b><span data-count="1700" data-sep="1">1,700</span><em>+</em></b><span>Maintenance clients in NYC</span></div>
+      <div class="stat"><b><span data-count="0.66" data-dec="2">.66</span></b><span>EMR safety rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="sec services" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker rv">Core Services</p>
+        <h2 class="h2 rv d1" id="svc-h">Commercial HVAC, engineered end to end.</h2>
+      </div>
+      <p class="lead rv d2">From preventive maintenance to new construction, one vertically integrated team keeps New York's commercial buildings comfortable, efficient and running.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="card svc svc-pm rv">
+        <a href="#contact" class="card-in">
+          <div class="img" data-scene="chiller" data-seed="2"></div>
+          <span class="flag">FEATURED SERVICE</span>
+          <div class="body">
+            <span class="num">01 / MAINTENANCE</span>
+            <h3>Preventive Maintenance</h3>
+            <p>Customized maintenance agreements for clients in many of NYC's most prominent buildings, built to increase the lifespan of your commercial HVAC equipment and save you money.</p>
+            <div class="svc-foot">
+              <div class="svc-tags"><span>Maintenance Agreements</span><span>Multi-Site Contracts</span><span>Building Engineering</span></div>
+              <span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span>
+            </div>
+          </div>
+        </a>
+      </article>
+
+      <article class="card svc svc-247 rv d1">
+        <a href="#contact" class="card-in">
+          <span class="big">24/7</span>
+          <span class="svc-ic"><svg><use href="#i-clock"/></svg></span>
+          <span class="num">02 / SERVICE</span>
+          <h3>Commercial HVAC Service</h3>
+          <p>Emergency response through a zoning system that gets factory-trained technicians to your site by van or on foot.</p>
+          <div class="svc-foot"><span class="mono" style="font-size:12px;color:#8FC5F0">24/7 SERVICE &amp; REPAIR</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div>
+        </a>
+      </article>
+
+      <article class="card svc svc-rep rv d2">
+        <a href="#contact" class="card-in">
+          <div class="img" data-scene="ducts" data-seed="4"></div>
+          <div class="body">
+            <span class="num">03 / UPGRADES</span>
+            <h3>Replacements &amp; Upgrades</h3>
+            <p>Turn-key equipment replacement, design-build and high-efficiency upgrades, scheduled so your day-to-day business isn't affected.</p>
+            <div class="svc-foot"><span class="mono" style="font-size:11.5px;color:var(--muted)">FINANCING AVAILABLE</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="card svc svc-con rv">
+        <a href="#contact" class="card-in">
+          <div class="img" data-scene="construction" data-seed="9"></div>
+          <div class="body">
+            <span class="num">04 / CONSTRUCTION</span>
+            <h3>New Commercial Construction</h3>
+            <p>Project management from initial survey through completion, backed by 150+ years of combined project management experience.</p>
+            <div class="svc-foot"><span class="mono" style="font-size:11.5px;color:var(--muted)">CONSTRUCTION &amp; RENOVATIONS</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div>
+          </div>
+        </a>
+      </article>
+
+      <article class="card svc svc-iaq rv d1">
+        <a href="#contact" class="card-in">
+          <div class="body">
+            <span class="svc-ic"><svg><use href="#i-air"/></svg></span>
+            <span class="num">05 / SPECIALIZED</span>
+            <h3>Indoor Air Quality Solutions</h3>
+            <p>Test, monitor, improve and sustain the quality of your indoor air for occupant wellbeing and productivity.</p>
+            <div class="iaq-steps"><span>TEST</span><span>MONITOR</span><span>IMPROVE</span><span>SUSTAIN</span></div>
+            <div class="svc-foot"><span class="mono" style="font-size:11.5px;color:rgba(255,255,255,.55)">ASSESSMENT &amp; CERTIFICATION</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div>
+          </div>
+          <div class="img" data-scene="airflow" data-seed="6"></div>
+        </a>
+      </article>
+    </div>
+
+    <div class="caps rv">
+      <div class="cap">
+        <h4><svg><use href="#i-layers"/></svg>Installation &amp; Upgrades</h4>
+        <ul>
+          <li><a href="#contact">Replacements and Upgrades<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">Construction and Renovations<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">Financing<svg><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4><svg><use href="#i-wrench"/></svg>Maintenance &amp; Service</h4>
+        <ul>
+          <li><a href="#contact">Commercial HVAC Preventive Maintenance<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">24/7 Service and Repair<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">Building Engineering Services<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">Multi-Site Service Contracts<svg><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4><svg><use href="#i-gauge"/></svg>Specialized Solutions</h4>
+        <ul>
+          <li><a href="#contact">IAQ Assessment &amp; Certification<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">Systems Analysis and Commissioning<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">NYC Cooling Tower Registration<svg><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#contact">Local Law 97<svg><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="sec about" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="about-vis rv">
+      <span class="av-dim"></span>
+      <div class="av-a img" data-scene="tower" data-seed="3"></div>
+      <div class="av-b img" data-scene="blueprint" data-seed="8"></div>
+      <div class="av-tag"><small>SINCE</small><b>1989</b></div>
+    </div>
+    <div>
+      <p class="kicker rv">About Donnelly</p>
+      <h2 class="h2 rv d1" id="about-h">We provide solutions.</h2>
+      <p class="rv d2">Donnelly Mechanical is New York City's premier provider of HVAC service, maintenance and construction, as well as energy solutions. For over 30 years, our team of 200+ has served the city's most prominent commercial organizations with customized maintenance and service agreements.</p>
+      <div class="pull rv d2">“We give our clients peace of mind.”</div>
+      <p class="rv d3">We're vertically integrated, with a focus on service, quality and expert leadership. Clients get direct owner access at every level.</p>
+      <div class="values rv d3">
+        <div><svg><use href="#i-team"/></svg><b>Clients</b></div>
+        <div><svg><use href="#i-shield"/></svg><b>Integrity</b></div>
+        <div><svg><use href="#i-bulb"/></svg><b>Innovation</b></div>
+        <div><svg><use href="#i-heart"/></svg><b>Employees</b></div>
+      </div>
+      <div class="about-acts rv d3">
+        <a href="#" class="btn btn-navy">About Donnelly <svg><use href="#i-arrow"/></svg></a>
+        <a href="#" class="tlink">Meet Your Donnelly Team <svg><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DIFFERENCE ===================== -->
+<section class="sec diff dark" aria-labelledby="diff-h">
+  <svg class="diff-ring" viewBox="0 0 400 400" fill="none" aria-hidden="true"><circle cx="200" cy="200" r="190" stroke="#2878B9" stroke-dasharray="3 9"/><circle cx="200" cy="200" r="140" stroke="#B7C9D8" stroke-opacity=".4"/><circle cx="200" cy="200" r="90" stroke="#2878B9" stroke-opacity=".6" stroke-dasharray="30 12"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker rv">The Donnelly Difference</p>
+        <h2 class="h2 rv d1" id="diff-h">Built on clients, integrity, innovation and people.</h2>
+      </div>
+      <p class="lead rv d2">The way we work is what sets us apart, from who answers your call to how we plan around your building.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="dg rv"><span class="num">01</span><span class="ic"><svg><use href="#i-key"/></svg></span><h3>Direct Owner Access</h3><p>Clients get direct owner access at every level of the company.</p></div>
+      <div class="dg rv d1"><span class="num">02</span><span class="ic"><svg><use href="#i-swap"/></svg></span><h3>Dedicated Transition Team</h3><p>When you switch vendors, the Donnelly Transition Team learns your building's HVAC system first.</p></div>
+      <div class="dg rv d2"><span class="num">03</span><span class="ic"><svg><use href="#i-badge"/></svg></span><h3>Rigorously Trained Technicians</h3><p>Every technician completes a rigorous training program. Our service techs are factory-trained.</p></div>
+      <div class="dg rv"><span class="num">04</span><span class="ic"><svg><use href="#i-map"/></svg></span><h3>Zoned Emergency Response</h3><p>A zoning system puts technicians within reach of your site, by van or on foot.</p></div>
+      <div class="dg rv d1"><span class="num">05</span><span class="ic"><svg><use href="#i-cal"/></svg></span><h3>Scheduled Around You</h3><p>Equipment replacement and maintenance are planned so your day-to-day business isn't affected.</p></div>
+      <div class="dg rv d2"><span class="num">06</span><span class="ic"><svg><use href="#i-stack"/></svg></span><h3>Vertically Integrated</h3><p>Service, quality and expert leadership under one roof, backed by a .66 EMR safety record.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SWITCH BAND ===================== -->
+<section class="switch" aria-label="Make the switch">
+  <div class="wrap">
+    <div class="rv">
+      <h2>Make the switch to Donnelly.</h2>
+      <p>Changing maintenance contracts shouldn't disrupt your building. Our dedicated Transition Team makes the move seamless for preferred maintenance clients.</p>
+    </div>
+    <a href="#contact" class="btn btn-white rv d1">Start Your Transition <svg><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<!-- ===================== INDUSTRIES ===================== -->
+<section class="sec" id="industries" aria-labelledby="ind-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker rv">Industries We Serve</p>
+        <h2 class="h2 rv d1" id="ind-h">Where New York can't afford downtime.</h2>
+      </div>
+      <p class="lead rv d2">Commercial HVAC service, maintenance and construction for the buildings that keep the city working.</p>
+    </div>
+    <div class="ind-row rv">
+      <a href="#contact" class="ind on"><div class="img" data-scene="tower" data-seed="12"></div><div class="ind-body"><span class="num">01</span><h3>Class-A Office</h3><p>Comfort, efficiency and reliability for premier office towers and their tenants.</p></div></a>
+      <a href="#contact" class="ind"><div class="img" data-scene="hospital" data-seed="7"></div><div class="ind-body"><span class="num">02</span><h3>Hospitals &amp; Healthcare</h3><p>HVAC service and maintenance for hospitals and healthcare facilities.</p></div></a>
+      <a href="#contact" class="ind"><div class="img" data-scene="columns" data-seed="2"></div><div class="ind-body"><span class="num">03</span><h3>Law Firms</h3><p>Dependable climate control for professional offices that run long hours.</p></div></a>
+      <a href="#contact" class="ind"><div class="img" data-scene="skyline" data-seed="21"></div><div class="ind-body"><span class="num">04</span><h3>Financial</h3><p>Mechanical service for New York's financial institutions.</p></div></a>
+      <a href="#contact" class="ind"><div class="img" data-scene="servers" data-seed="4"></div><div class="ind-body"><span class="num">05</span><h3>Data Centers</h3><p>Cooling systems service and maintenance for critical data environments.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section class="sec" id="projects" style="padding-top:0" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker rv">Featured Projects</p>
+        <h2 class="h2 rv d1" id="proj-h">Case studies from across the city.</h2>
+      </div>
+      <a href="#" class="tlink rv d2">View All Projects <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="proj-grid">
+      <article class="card proj proj-1 rv"><a href="#" class="card-in"><div class="img" data-scene="ducts" data-seed="11"></div><div class="body"><div><span class="cat">Replacements &amp; Upgrades · Class-A Office</span><h3>Air Handling Unit Retrofit for Class A Commercial Building</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+      <article class="card proj rv d1"><a href="#" class="card-in"><div class="img" data-scene="snowmelt" data-seed="3"></div><div class="body"><div><span class="cat">Transit</span><h3>MTA: Snow Melt System</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+      <article class="card proj rv d2"><a href="#" class="card-in"><div class="img" data-scene="hospital" data-seed="15"></div><div class="body"><div><span class="cat">Healthcare</span><h3>Northwell South Shore</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+      <article class="card proj rv d1"><a href="#" class="card-in"><div class="img" data-scene="library" data-seed="5"></div><div class="body"><div><span class="cat">Public Institution</span><h3>A Major Public Library System</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+      <article class="card proj rv d2"><a href="#" class="card-in"><div class="img" data-scene="servers" data-seed="17"></div><div class="body"><div><span class="cat">Technology</span><h3>A Global Technology Company</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+    </div>
+    <div class="proj-row2">
+      <article class="card proj rv"><a href="#" class="card-in"><div class="img" data-scene="tower" data-seed="31"></div><div class="body"><div><span class="cat">Technology</span><h3>Global Social Networking Company</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+      <article class="card proj rv d1"><a href="#" class="card-in"><div class="img" data-scene="rooftop" data-seed="14"></div><div class="body"><div><span class="cat">Preventive Maintenance</span><h3>Maintenance for 1,700+ NYC Clients</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+      <article class="card proj rv d2"><a href="#" class="card-in"><div class="img" data-scene="chiller" data-seed="19"></div><div class="body"><div><span class="cat">Resource Library</span><h3>Explore Our Resource Library</h3></div><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div></a></article>
+    </div>
+    <p class="proj-note">Mockup note: the artwork here is a placeholder illustration. Swap in Donnelly's actual project photography.</p>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="sec voices" aria-labelledby="voices-h">
+  <div class="wrap">
+    <div class="vq rv">
+      <svg class="qm"><use href="#i-quote"/></svg>
+      <p>Clients point to Donnelly's <em>“prompt responsiveness”</em> and <em>“great communication”</em>, including an AC repair other vendors couldn't complete.</p>
+      <small>Drawn from client testimonials on donnellymech.com</small>
+    </div>
+    <div class="who">
+      <p class="kicker rv">Client Testimonials</p>
+      <h2 class="h2 rv d1" id="voices-h">Trusted by New York's facility leaders.</h2>
+      <p class="lead rv d2">Testimonials come from facilities, operations and business leaders across the city.</p>
+      <div class="who-list">
+        <div class="who-item rv"><b>CBRE</b><span>Account Lead, Facilities Manager</span></div>
+        <div class="who-item rv d1"><b>BlackRock</b><span>Director</span></div>
+        <div class="who-item rv"><b>Windsor Pharmacy</b><span>Ellen Adler, President</span></div>
+        <div class="who-item rv d1"><b>150 Broadway Tenant</b><span>Senior Manager, Facilities &amp; Environment</span></div>
+        <div class="who-item rv"><b>Assisted Living, Manhattan</b><span>Vice President of Operations</span></div>
+        <div class="who-item rv d1"><b>Social Media Company</b><span>Client</span></div>
+      </div>
+      <p class="mock-note">Mockup note: pull the full testimonial text from the current site in production.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INSIGHTS ===================== -->
+<section class="sec" id="insights" aria-labelledby="ins-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kicker rv">Resources</p>
+        <h2 class="h2 rv d1" id="ins-h">Insights from the field.</h2>
+      </div>
+      <a href="#" class="tlink rv d2">Visit the Blog <svg><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="ins-grid">
+      <article class="card ins rv"><a href="#" class="card-in"><div class="meta"><span>Blog · Seasonal</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div><h3>Why Rooftop HVAC Units Need Attention Before NYC Winter Weather</h3><span class="tlink">Read article <svg><use href="#i-arrow"/></svg></span></a></article>
+      <article class="card ins rv d1"><a href="#" class="card-in"><div class="meta"><span>Blog · Equipment</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div><h3>When Should a Commercial HVAC System Be Repaired vs. Replaced?</h3><span class="tlink">Read article <svg><use href="#i-arrow"/></svg></span></a></article>
+      <article class="card ins rv d2"><a href="#" class="card-in"><div class="meta"><span>Blog · Company</span><span class="arrow-btn"><svg><use href="#i-arrow"/></svg></span></div><h3>Why NYC Businesses Choose Donnelly Mechanical for HVAC Service</h3><span class="tlink">Read article <svg><use href="#i-arrow"/></svg></span></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA / CONTACT ===================== -->
+<section class="sec cta dark" id="contact" aria-labelledby="cta-h">
+  <div class="bg img" data-scene="skyline" data-seed="40"></div>
+  <div class="wrap">
+    <div>
+      <p class="kicker rv">Get in Touch</p>
+      <h2 class="rv d1" id="cta-h">Let's talk about your building.</h2>
+      <p class="lead rv d2">Emergency service, a preventive maintenance agreement or a full system replacement: our team is ready to help.</p>
+      <div class="c-list rv d3">
+        <a class="c-item" href="tel:+17188861500"><span class="ic"><svg><use href="#i-phone"/></svg></span><span><small>Give us a call · New &amp; existing clients</small><b>718-886-1500</b></span></a>
+        <div class="c-item"><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Headquarters</small><b>96-59 222 Street, Queens Village, NY 11429</b></span></div>
+        <a class="c-item" href="#"><span class="ic"><svg><use href="#i-user"/></svg></span><span><small>Existing clients</small><b>Client Portal</b></span></a>
+      </div>
+    </div>
+    <form class="form rv d2" id="form" novalidate>
+      <div class="f-in">
+        <h3>Request Service</h3>
+        <p>Tell us about your building and we'll be in touch.</p>
+        <div class="frow">
+          <div class="fld"><label for="f-n">Full name</label><input id="f-n" required autocomplete="name"></div>
+          <div class="fld"><label for="f-c">Company</label><input id="f-c" autocomplete="organization"></div>
+        </div>
+        <div class="frow">
+          <div class="fld"><label for="f-e">Email</label><input id="f-e" type="email" required autocomplete="email"></div>
+          <div class="fld"><label for="f-p">Phone</label><input id="f-p" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="fld"><label for="f-s">Service needed</label>
+          <select id="f-s"><option>Preventive Maintenance</option><option>24/7 Service and Repair</option><option>Replacements and Upgrades</option><option>New Commercial Construction</option><option>Indoor Air Quality Solutions</option><option>Local Law 97</option><option>Make the Switch</option></select>
+        </div>
+        <div class="fld"><label for="f-m">Message</label><textarea id="f-m" placeholder="Building address, equipment, timeline…"></textarea></div>
+        <button class="btn btn-blue" type="submit">Submit Request <svg><use href="#i-arrow"/></svg></button>
+      </div>
+      <div class="f-ok" role="status"><svg><use href="#i-check"/></svg><h3>Thank you.</h3><p style="color:var(--muted)">A member of our team will reach out shortly.</p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div class="ft-brand">
+        <a href="#top" class="logo"><span class="logo-mark"><svg><use href="#i-fan"/></svg></span><span class="logo-t"><b>DONNELLY</b><small>MECHANICAL</small></span></a>
+        <p>New York City's premier provider of commercial HVAC service, maintenance and construction, as well as energy solutions. An Equans Company.</p>
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="Facebook">f</a><a href="#" aria-label="X (Twitter)">X</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">yt</a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul><li><a href="#services">Replacements &amp; Upgrades</a></li><li><a href="#services">Preventive Maintenance</a></li><li><a href="#services">24/7 Service &amp; Repair</a></li><li><a href="#services">Building Engineering</a></li><li><a href="#services">Indoor Air Quality</a></li><li><a href="#services">Local Law 97</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#about">About Us</a></li><li><a href="#about">Your Donnelly Team</a></li><li><a href="#about">Donnelly Cares</a></li><li><a href="#about">Safety</a></li><li><a href="#about">Careers</a></li><li><a href="#about">Newsroom</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>96-59 222 Street<br>Queens Village, NY 11429</li>
+          <li><a href="tel:+17188861500">718-886-1500</a></li>
+          <li><a href="#">Client Portal</a></li>
+          <li><a href="#industries">Industries</a> · <a href="#projects">Projects</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fb">
+      <span>© <span id="yr">2026</span> Donnelly Mechanical — An Equans Company. All rights reserved.</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   Built-in illustrations (no external images needed)
+   ========================================================= */
+const Scenes = (() => {
+  const C = {n:'#101E32',d:'#0B1626',m:'#13273F',m2:'#1B3858',b1:'#174B78',b2:'#2878B9',s:'#B7C9D8',metal:'#2A4A70',metal2:'#3B6A9A'};
+  let r = Math.random, uid = 0;
+  const id = () => 'z' + (uid++);
+  const seed = n => { let s = (n * 9301 + 49297) % 233280 || 7; r = () => (s = (s * 16807) % 2147483647) / 2147483647; };
+  const svg = (b, d='') => `<svg class="scene" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>${d}</defs>${b}</svg>`;
+  const lin = (i,a,b,h) => `<linearGradient id="${i}" x1="0" y1="0" x2="${h?1:0}" y2="${h?0:1}"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
+  const lin3 = (i,a,b,c) => `<linearGradient id="${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset=".5" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></linearGradient>`;
+  const rad = (i,c=C.b2,o=.5) => `<radialGradient id="${i}"><stop offset="0" stop-color="${c}" stop-opacity="${o}"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></radialGradient>`;
+  const f = v => v.toFixed(1);
+  const city = (hz, sc, lit=.25) => {
+    let s = '', x = -20; const cols = [C.m, C.m2, '#162E4B'];
+    while (x < 820) {
+      const w = (46 + r()*80)*sc, h = (120 + r()*300)*sc, y = hz - h, c = cols[Math.floor(r()*3)];
+      s += `<rect x="${f(x)}" y="${f(y)}" width="${f(w)}" height="${f(h)}" fill="${c}"/>`;
+      if (r() < .3) s += `<rect x="${f(x+w/2-1.5)}" y="${f(y-30*sc)}" width="3" height="${f(30*sc)}" fill="${c}"/>`;
+      const cw = 5*sc, ch = 8*sc, g = 5*sc;
+      for (let yy = y + g*2; yy + ch < hz; yy += ch + g) for (let xx = x + g; xx + cw < x + w - g; xx += cw + g)
+        if (r() < lit) s += `<rect x="${f(xx)}" y="${f(yy)}" width="${f(cw)}" height="${f(ch)}" fill="${r()<.75?C.s:C.b2}" opacity="${(.2+r()*.5).toFixed(2)}"/>`;
+      x += w + 3*sc;
+    }
+    return s;
+  };
+  const fan = (cx, cy, rr, sy=1) => {
+    let bl = ''; for (let a = 0; a < 360; a += 90) bl += `<ellipse cx="0" cy="${-rr*.48}" rx="${rr*.2}" ry="${rr*.46}" fill="${C.metal2}" transform="rotate(${a})"/>`;
+    return `<g transform="translate(${cx} ${cy}) scale(1 ${sy})"><circle r="${rr}" fill="${C.d}" stroke="#4A78A8" stroke-width="3"/><g class="spin">${bl}</g><circle r="${rr*.16}" fill="${C.s}"/></g>`;
+  };
+  const gauge = (cx,cy,rr) => `<g transform="translate(${cx} ${cy})"><circle r="${rr}" fill="#E8EEF3" stroke="${C.b2}" stroke-width="4"/>${[...Array(7)].map((_,i)=>`<line y1="${-rr*.78}" y2="${-rr*.62}" stroke="${C.n}" stroke-width="2" transform="rotate(${-90+i*30})"/>`).join('')}<line x2="${rr*.5}" y2="${-rr*.45}" stroke="${C.b2}" stroke-width="3"/><circle r="4" fill="${C.n}"/></g>`;
+
+  const S = {
+    rooftop(){ const a=id(),g=id(),m=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><circle cx="560" cy="380" r="340" fill="url(#${g})"/>${city(440,.95,.3)}`;
+      s+=`<polygon points="0,440 800,440 800,600 0,600" fill="#0E1B2C"/><rect y="438" width="800" height="3" fill="${C.s}" opacity=".25"/>`;
+      for(let i=0;i<9;i++) s+=`<line x1="${400+(i-4)*60}" y1="440" x2="${400+(i-4)*260}" y2="600" stroke="#16263C" stroke-width="2"/>`;
+      s+=`<g stroke="#2E4D72" stroke-width="3">${[...Array(17)].map((_,i)=>`<line x1="${i*50}" y1="410" x2="${i*50}" y2="440"/>`).join('')}<line x1="0" y1="410" x2="800" y2="410"/></g>`;
+      const unit=(x,y,w,h,nf)=>{ let u=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="url(#${m})"/><polygon points="${x},${y} ${x+w},${y} ${x+w+34},${y-26} ${x+34},${y-26}" fill="#35608E"/><polygon points="${x+w},${y} ${x+w+34},${y-26} ${x+w+34},${y+h-26} ${x+w},${y+h}" fill="#1A3352"/>`;
+        for(let yy=y+16;yy<y+h-10;yy+=9) u+=`<line x1="${x+14}" y1="${yy}" x2="${x+w*.55}" y2="${yy}" stroke="#163050" stroke-width="3"/>`;
+        u+=`<rect x="${x+w*.62}" y="${y+16}" width="${w*.3}" height="${h*.5}" fill="#1A3352" stroke="#4A78A8"/><circle cx="${x+w*.68}" cy="${y+28}" r="3" fill="${C.b2}" class="blink"/>`;
+        for(let i=0;i<nf;i++) u+=fan(x+34+ (w/nf)*(i+.5) - 14, y-13, 22, .38);
+        return u; };
+      s+=unit(70,470,250,90,2)+unit(430,455,290,100,3);
+      s+=`<rect x="330" y="488" width="100" height="26" fill="#22426A"/><rect x="330" y="488" width="100" height="5" fill="#35608E"/><rect x="${376}" y="486" width="8" height="30" fill="#1A3352"/>`;
+      return svg(s, lin(a,'#24497A',C.d)+rad(g,C.b2,.45)+lin3(m,'#35608E','#24456C','#1A3352')); },
+
+    chiller(){ const a=id(),m=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><rect width="800" height="600" fill="url(#${g})"/>`;
+      for(let x=0;x<800;x+=100) s+=`<line x1="${x}" y1="0" x2="${x}" y2="470" stroke="#16304E" stroke-width="2"/>`;
+      s+=`<rect y="470" width="800" height="130" fill="${C.d}"/>`; for(let i=0;i<9;i++) s+=`<line x1="${400+(i-4)*70}" y1="470" x2="${400+(i-4)*240}" y2="600" stroke="#13233A" stroke-width="2"/>`;
+      s+=`<path d="M-20 110H820" stroke="${C.b1}" stroke-width="30"/><path d="M-20 170H820" stroke="${C.b2}" stroke-width="22" opacity=".85"/>`;
+      [[260,110],[330,170],[520,110],[590,170]].forEach(([x,y],i)=>{ s+=`<path d="M${x} ${y}V${i%2?318:300}" stroke="${i%2?C.b2:C.b1}" stroke-width="${i%2?18:24}"/><rect x="${x-20}" y="${y+40}" width="40" height="10" fill="#4A78A8"/>`; });
+      [80,150,700].forEach(x=> s+=`<path d="M${x} 110V600" stroke="${C.b1}" stroke-width="26"/><rect x="${x-19}" y="250" width="38" height="12" fill="#4A78A8"/><rect x="${x-19}" y="400" width="38" height="12" fill="#4A78A8"/>`);
+      s+=`<rect x="200" y="300" width="460" height="130" rx="65" fill="url(#${m})"/><ellipse cx="265" cy="365" rx="22" ry="62" fill="#1A3352" opacity=".7"/><ellipse cx="595" cy="365" rx="22" ry="62" fill="#4A78A8" opacity=".35"/>`;
+      s+=`<rect x="220" y="430" width="30" height="40" fill="#1A3352"/><rect x="610" y="430" width="30" height="40" fill="#1A3352"/><rect x="360" y="250" width="130" height="50" fill="#1A3352" stroke="#4A78A8"/><rect x="372" y="262" width="60" height="26" fill="${C.d}"/><rect x="378" y="268" width="${30+r()*20|0}" height="5" fill="${C.b2}"/><rect x="378" y="277" width="24" height="5" fill="${C.s}" opacity=".6"/><circle cx="452" cy="268" r="4" fill="${C.b2}" class="blink"/><circle cx="470" cy="268" r="4" fill="${C.s}" opacity=".6"/>`;
+      s+=gauge(150,200,28)+gauge(700,330,26);
+      return svg(s, lin(a,'#1B3858','#0D1A2C')+lin3(m,'#4A78A8','#2A4A70','#1A3352')+rad(g,C.b2,.25)); },
+
+    ducts(){ const a=id(),m=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><rect y="500" width="800" height="100" fill="${C.d}"/>`;
+      s+=`<polygon points="430,120 800,40 800,170 430,200" fill="#2A4A70"/><polygon points="430,120 800,40 800,52 430,130" fill="#4A78A8"/>`;
+      for(let i=1;i<5;i++){ const x=430+i*90, y1=120-i*19.5, y2=200-i*7.5; s+=`<line x1="${x}" y1="${y1}" x2="${x}" y2="${y2}" stroke="#1A3352" stroke-width="4"/>`; }
+      s+=`<g stroke="${C.s}" stroke-width="2" opacity=".55" fill="none"><path class="flow" d="M450 150 L780 95"/><path class="flow" d="M450 172 L780 135" style="animation-delay:-1s"/></g>`;
+      s+=`<rect x="330" y="120" width="110" height="120" fill="#2A4A70"/><rect x="330" y="120" width="110" height="10" fill="#4A78A8"/>`;
+      s+=`<rect x="40" y="230" width="560" height="270" fill="url(#${m})"/><rect x="40" y="230" width="560" height="10" fill="#4A78A8"/>`;
+      [40,180,320,460].forEach((x,i)=>{ s+=`<rect x="${x+8}" y="250" width="124" height="232" fill="none" stroke="#163050" stroke-width="3"/><rect x="${x+112}" y="352" width="8" height="30" rx="2" fill="${C.s}" opacity=".7"/>`; });
+      for(let x=196;x<300;x+=7) s+=`<line x1="${x}" y1="262" x2="${x}" y2="470" stroke="#3B6A9A" stroke-width="2"/>`;
+      s+=fan(390,366,78);
+      s+=`<rect x="476" y="262" width="104" height="60" fill="${C.d}" stroke="#4A78A8"/><rect x="486" y="274" width="50" height="6" fill="${C.b2}"/><rect x="486" y="288" width="70" height="6" fill="${C.s}" opacity=".5"/><rect x="486" y="302" width="34" height="6" fill="${C.s}" opacity=".5"/><circle cx="566" cy="277" r="4" fill="${C.b2}" class="blink"/>`;
+      s+=`<rect x="610" y="420" width="150" height="80" fill="#1A3352"/>`+gauge(685,380,30);
+      return svg(s, lin(a,'#1D3A5E','#0E1D31')+lin3(m,'#35608E','#24456C','#1A3352')); },
+
+    construction(){ const a=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><circle cx="560" cy="420" r="300" fill="url(#${g})"/>${city(560,.6,.2)}`;
+      const cols=[150,220,290,360,430,500], floors=[560,500,440,380,320,260,200];
+      floors.forEach((y,i)=>{ const top=i>=5; s+=`<rect x="150" y="${y-6}" width="${top?210:350}" height="8" fill="#3B6A9A"/>`; if(i<4) s+=`<rect x="150" y="${y-6}" width="350" height="8" fill="#5482B3"/>`; });
+      cols.forEach((x,i)=>{ s+=`<rect x="${x-4}" y="${i<3?194:254}" width="8" height="${i<3?366:306}" fill="#4A78A8"/>`; });
+      for(let i=0;i<5;i++){ const y=floors[i+1]; s+=`<line x1="150" y1="${y}" x2="220" y2="${floors[i]}" stroke="#2E5585" stroke-width="3"/><line x1="430" y1="${floors[i]}" x2="500" y2="${y}" stroke="#2E5585" stroke-width="3"/>`; }
+      s+=`<g stroke="${C.s}" stroke-width="3" opacity=".8"><line x1="620" y1="560" x2="620" y2="90"/><line x1="650" y1="560" x2="650" y2="90"/>`;
+      for(let y=560;y>100;y-=30) s+=`<line x1="620" y1="${y}" x2="650" y2="${y-30}"/>`;
+      s+=`<line x1="360" y1="96" x2="800" y2="96"/><line x1="360" y1="120" x2="680" y2="120"/>`;
+      for(let x=380;x<800;x+=30) s+=`<line x1="${x}" y1="96" x2="${x+15}" y2="${x<680?120:96}"/>`;
+      s+=`<line x1="635" y1="90" x2="635" y2="50"/><line x1="635" y1="50" x2="380" y2="96"/><line x1="635" y1="50" x2="790" y2="96"/></g>`;
+      s+=`<rect x="700" y="100" width="50" height="34" fill="#4A78A8"/><line x1="440" y1="120" x2="440" y2="250" stroke="${C.s}" stroke-width="2"/><rect x="400" y="250" width="80" height="10" fill="${C.b2}"/>`;
+      return svg(s, lin(a,'#2A5A8E','#0E1D31')+rad(g,C.b2,.5)); },
+
+    airflow(){ const a=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><rect width="800" height="90" fill="#0E1D31"/><rect y="88" width="800" height="3" fill="${C.s}" opacity=".2"/>`;
+      s+=`<rect x="240" y="78" width="320" height="22" fill="#2A4A70"/>`; for(let x=252;x<552;x+=16) s+=`<rect x="${x}" y="84" width="8" height="12" fill="${C.d}"/>`;
+      s+=`<ellipse cx="400" cy="300" rx="320" ry="210" fill="url(#${g})"/>`;
+      s+=`<g fill="none" stroke="${C.s}" stroke-width="2.2" stroke-linecap="round" opacity=".6">`;
+      for(let i=0;i<7;i++){ const x=262+i*46, dx=(i-3)*70; s+=`<path class="flow" style="animation-delay:${-i*.4}s" d="M${x} 104 C ${x} 220, ${x+dx} 260, ${x+dx*1.8} 470"/>`; }
+      s+=`</g>`;
+      for(let i=0;i<46;i++){ s+=`<circle cx="${f(60+r()*680)}" cy="${f(130+r()*380)}" r="${f(1+r()*2.4)}" fill="${r()<.5?C.s:C.b2}" opacity="${(.25+r()*.5).toFixed(2)}"/>`; }
+      s+=`<rect y="520" width="800" height="80" fill="${C.d}"/><rect x="120" y="470" width="300" height="10" fill="#2A4A70"/><rect x="140" y="480" width="8" height="40" fill="#1A3352"/><rect x="392" y="480" width="8" height="40" fill="#1A3352"/>`;
+      s+=`<g transform="translate(600 210)"><rect width="140" height="190" rx="10" fill="#1A3352" stroke="#4A78A8" stroke-width="2"/><rect x="14" y="16" width="112" height="100" rx="4" fill="${C.d}"/><circle cx="70" cy="66" r="34" fill="none" stroke="#1F3A5C" stroke-width="8"/><circle cx="70" cy="66" r="34" fill="none" stroke="${C.b2}" stroke-width="8" stroke-dasharray="160 214" transform="rotate(-90 70 66)"/><rect x="58" y="60" width="24" height="12" rx="2" fill="${C.s}" opacity=".8"/>${[0,1,2,3].map(i=>`<rect x="${18+i*28}" y="${170-(20+i*10)}" width="18" height="${20+i*10}" fill="${i==3?C.b2:'#3B6A9A'}"/>`).join('')}</g>`;
+      return svg(s, lin(a,'#1B3B60','#0E1D31')+rad(g,C.b2,.22)); },
+
+    servers(){ const a=id(),g=id(); const vx=400,vy=270; let s=`<rect width="800" height="600" fill="url(#${a})"/>`;
+      s+=`<polygon points="0,0 800,0 ${vx+70},${vy-60} ${vx-70},${vy-60}" fill="#0E1D31"/>`;
+      for(let i=0;i<5;i++){ const t=i/4; s+=`<line x1="${f(250+t*300)}" y1="0" x2="${f(vx-40+t*80)}" y2="${vy-60}" stroke="${C.b2}" stroke-width="${3-t}" opacity=".55"/>`; }
+      s+=`<polygon points="0,600 800,600 ${vx+70},${vy+60} ${vx-70},${vy+60}" fill="#0B1626"/>`;
+      for(let i=0;i<9;i++){ const t=i/8; s+=`<line x1="${t*800}" y1="600" x2="${vx-70+t*140}" y2="${vy+60}" stroke="#16263C" stroke-width="2"/>`; }
+      s+=`<rect x="${vx-70}" y="${vy-60}" width="140" height="120" fill="${C.b1}" opacity=".6"/><ellipse cx="${vx}" cy="${vy}" rx="120" ry="90" fill="url(#${g})"/>`;
+      const side=(dir)=>{ const xo=dir<0?0:800, xi=dir<0?vx-70:vx+70; let p=`<polygon points="${xo},40 ${xi},${vy-60} ${xi},${vy+60} ${xo},560" fill="#13273F"/>`;
+        for(let k=0;k<6;k++){ const t=k/6, x=xo+(xi-xo)*t, x2=xo+(xi-xo)*(t+1/6); p+=`<line x1="${f(x)}" y1="${f(40+(vy-100)*t)}" x2="${f(x)}" y2="${f(560-(560-vy-60)*t)}" stroke="#0B1626" stroke-width="${f(6-5*t)}"/>`;
+          for(let j=1;j<11;j++){ const yy1=40+(vy-100)*t+((560-(560-vy-60)*t)-(40+(vy-100)*t))*j/11; const yy2=40+(vy-100)*(t+1/6)+((560-(560-vy-60)*(t+1/6))-(40+(vy-100)*(t+1/6)))*j/11;
+            p+=`<line x1="${f(x)}" y1="${f(yy1)}" x2="${f(x2)}" y2="${f(yy2)}" stroke="#1F3A5C" stroke-width="${f(2.4-2*t)}"/>`;
+            if(r()<.5) p+=`<circle cx="${f(x+(x2-x)*.2)}" cy="${f(yy1+(yy2-yy1)*.2-3*(1-t))}" r="${f(2.6-2*t)}" fill="${r()<.8?'#4FB0FF':C.s}" ${r()<.3?'class="blink"':''}/>`; } }
+        return p; };
+      s+=side(-1)+side(1);
+      return svg(s, lin(a,'#132A47','#0B1626')+rad(g,'#4FB0FF',.5)); },
+
+    tower(){ const a=id(),gl=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><circle cx="400" cy="0" r="380" fill="url(#${g})"/>`;
+      s+=`<polygon points="-40,600 140,600 210,0 120,0" fill="#13273F"/><polygon points="660,600 840,600 690,0 600,0" fill="#13273F"/>`;
+      s+=`<polygon points="170,600 630,600 500,-10 300,-10" fill="url(#${gl})"/>`;
+      for(let i=0;i<=12;i++){ const t=i/12; s+=`<line x1="${f(170+t*460)}" y1="600" x2="${f(300+t*200)}" y2="-10" stroke="#0E1D31" stroke-width="${i%3?1.5:3}" opacity=".8"/>`; }
+      let y=600, gap=46; while(y>0){ const k=(600-y)/610; s+=`<line x1="${f(170+130*k)}" y1="${f(y)}" x2="${f(630-130*k)}" y2="${f(y)}" stroke="#0E1D31" stroke-width="2" opacity=".75"/>`; y-=gap; gap*=.93; }
+      s+=`<polygon points="330,600 430,600 360,-10 330,-10" fill="#fff" opacity=".06"/><polygon points="460,600 500,600 420,-10 405,-10" fill="#fff" opacity=".05"/>`;
+      return svg(s, lin(a,'#24497A',C.d)+lin(gl,'#3A7BB8','#13304F')+rad(g,C.b2,.5)); },
+
+    hospital(){ const a=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><circle cx="600" cy="200" r="260" fill="url(#${g})"/>${city(420,.55,.15)}`;
+      s+=`<rect x="90" y="200" width="620" height="320" fill="#1F3A5C"/><rect x="90" y="200" width="620" height="12" fill="#3B6A9A"/><rect x="300" y="140" width="200" height="380" fill="#24456C"/><rect x="300" y="140" width="200" height="10" fill="#4A78A8"/>`;
+      for(let yy=232;yy<480;yy+=38) for(let xx=110;xx<690;xx+=34){ if(xx>292&&xx<500) continue; s+=`<rect x="${xx}" y="${yy}" width="22" height="22" fill="${r()<.45?C.s:'#163050'}" opacity="${r()<.45?.45:.9}"/>`; }
+      for(let yy=200;yy<440;yy+=40) for(let xx=318;xx<490;xx+=42) s+=`<rect x="${xx}" y="${yy}" width="28" height="24" fill="${r()<.5?C.s:'#163050'}" opacity=".5"/>`;
+      s+=`<rect x="370" y="160" width="60" height="60" rx="6" fill="${C.b2}"/><rect x="393" y="170" width="14" height="40" fill="#fff"/><rect x="380" y="183" width="40" height="14" fill="#fff"/>`;
+      s+=`<rect x="320" y="450" width="160" height="70" fill="#0E1D31"/><rect x="300" y="440" width="200" height="12" fill="#4A78A8"/><rect y="520" width="800" height="80" fill="${C.d}"/>`;
+      [60,150,650,740].forEach(x=> s+=`<rect x="${x-3}" y="470" width="6" height="50" fill="#13273F"/><circle cx="${x}" cy="460" r="34" fill="#16304E"/>`);
+      return svg(s, lin(a,'#24497A',C.d)+rad(g,C.b2,.45)); },
+
+    columns(lib){ const a=id(),g=id(),cl=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><circle cx="400" cy="280" r="330" fill="url(#${g})"/>`;
+      s+=`<polygon points="110,170 400,70 690,170" fill="#24456C"/><polygon points="150,160 400,90 650,160" fill="#1A3352"/><rect x="100" y="170" width="600" height="38" fill="#2E5585"/><rect x="100" y="204" width="600" height="6" fill="#4A78A8"/>`;
+      s+=`<rect x="110" y="210" width="580" height="270" fill="#13273F"/>`;
+      if(lib) for(let i=0;i<5;i++){ const x=150+i*116; s+=`<path d="M${x} 470V320a38 38 0 0 1 76 0V470Z" fill="${C.b2}" opacity=".25"/>`; }
+      const n=lib?6:7, w=520/(n-1);
+      for(let i=0;i<n;i++){ const x=140+i*w; s+=`<rect x="${f(x-17)}" y="214" width="34" height="262" fill="url(#${cl})"/><rect x="${f(x-24)}" y="210" width="48" height="12" fill="#4A78A8"/><rect x="${f(x-24)}" y="470" width="48" height="12" fill="#4A78A8"/>`;
+        for(let k=-10;k<=10;k+=7) s+=`<line x1="${f(x+k)}" y1="224" x2="${f(x+k)}" y2="468" stroke="#1A3352" stroke-width="1.5" opacity=".6"/>`; }
+      for(let i=0;i<4;i++) s+=`<rect x="${80-i*20}" y="${482+i*18}" width="${640+i*40}" height="18" fill="${['#2E5585','#24456C','#1F3A5C','#1A3352'][i]}"/>`;
+      return svg(s, lin(a,'#1D3A5E',C.d)+rad(g,C.b2,.35)+lin(cl,'#5482B3','#2A4A70',true)); },
+    library(){ return S.columns(true); },
+
+    skyline(){ const a=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/><circle cx="420" cy="560" r="380" fill="url(#${g})"/>${city(600,1.05,.32)}`;
+      return svg(s, lin(a,'#24497A',C.d)+rad(g,C.b2,.5)); },
+
+    snowmelt(){ const a=id(),g=id(); let s=`<rect width="800" height="600" fill="url(#${a})"/>${city(250,.5,.2)}`;
+      s+=`<polygon points="0,600 800,600 560,250 240,250" fill="#13273F"/><polygon points="0,600 120,600 330,250 240,250" fill="#1A3352"/><line x1="120" y1="600" x2="330" y2="250" stroke="${C.s}" stroke-width="4" opacity=".7"/>`;
+      s+=`<ellipse cx="460" cy="440" rx="300" ry="140" fill="url(#${g})"/>`;
+      let d='', k=0; for(let y=270;y<590;y+=k*1.5+18){ const t=(y-250)/350, xl=330+(120-330)*t+30, xr=560+(800-560)*t-20; d+= (d?'L':'M')+f(k%2?xr:xl)+' '+f(y)+'L'+f(k%2?xl:xr)+' '+f(y); k++; }
+      s+=`<path d="${d}" fill="none" stroke="${C.b2}" stroke-width="5" opacity=".85" stroke-linejoin="round"/><path class="flow" d="${d}" fill="none" stroke="#BFE3FF" stroke-width="2"/>`;
+      for(let i=0;i<70;i++) s+=`<circle cx="${f(r()*800)}" cy="${f(r()*560)}" r="${f(1+r()*2.6)}" fill="#fff" opacity="${(.3+r()*.5).toFixed(2)}"/>`;
+      s+=`<rect x="600" y="470" width="150" height="90" fill="#24456C" stroke="#4A78A8"/>`+gauge(640,515,22)+`<rect x="680" y="495" width="50" height="8" fill="${C.b2}"/><rect x="680" y="512" width="36" height="8" fill="${C.s}" opacity=".5"/>`;
+      return svg(s, lin(a,'#2A4A70','#0E1D31')+rad(g,'#4FB0FF',.25)); },
+
+    blueprint(){ const p=id(); let s=`<rect width="800" height="600" fill="#123A63"/><rect width="800" height="600" fill="url(#${p})"/>`;
+      s+=`<g fill="none" stroke="#CFE3F3" stroke-width="2" opacity=".85"><rect x="90" y="140" width="420" height="80"/><rect x="510" y="120" width="200" height="120"/><path d="M200 220V420H520M330 220V340H620"/><rect x="170" y="420" width="60" height="60"/><rect x="490" y="390" width="60" height="60"/><rect x="590" y="310" width="60" height="60"/></g>`;
+      [[200,450],[520,420],[620,340]].forEach(([x,y])=> s+=`<g stroke="#CFE3F3" stroke-width="1.6" opacity=".8"><line x1="${x-22}" y1="${y-22}" x2="${x+22}" y2="${y+22}"/><line x1="${x+22}" y1="${y-22}" x2="${x-22}" y2="${y+22}"/></g>`);
+      s+=`<g stroke="#8FC5F0" stroke-width="1.2"><line x1="90" y1="100" x2="510" y2="100"/><line x1="90" y1="92" x2="90" y2="108"/><line x1="510" y1="92" x2="510" y2="108"/><line x1="750" y1="120" x2="750" y2="240"/><line x1="742" y1="120" x2="758" y2="120"/><line x1="742" y1="240" x2="758" y2="240"/></g>`;
+      s+=`<g transform="translate(610 180)"><circle r="44" fill="none" stroke="#CFE3F3" stroke-width="2"/><g class="spin">${[0,90,180,270].map(a=>`<path d="M0 0 C 10 -14, 10 -30, 0 -38 C -6 -26, -6 -12, 0 0Z" fill="none" stroke="#CFE3F3" stroke-width="1.8" transform="rotate(${a})"/>`).join('')}</g></g>`;
+      s+=`<g stroke="#CFE3F3" stroke-width="1" opacity=".5">${[...Array(6)].map((_,i)=>`<line x1="${110+i*60}" y1="160" x2="${140+i*60}" y2="200"/>`).join('')}</g>`;
+      return svg(s, `<pattern id="${p}" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#1F4E7E" stroke-width="1"/></pattern>`); }
+  };
+
+  return (name, n=1) => { seed(n); return (S[name] || S.skyline)(); };
+})();
+
+document.querySelectorAll('.img[data-scene]').forEach(el => {
+  el.insertAdjacentHTML('afterbegin', Scenes(el.dataset.scene, +el.dataset.seed || 1));
+});
+
+/* =========================================================
+   Interactions
+   ========================================================= */
+(() => {
+  const hdr = document.getElementById('hdr');
+  const onScroll = () => hdr.classList.toggle('scrolled', scrollY > 30);
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile nav
+  const burger = document.getElementById('burger');
+  burger.addEventListener('click', () => {
+    const open = document.body.classList.toggle('nav-open');
+    burger.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mnav a').forEach(a => a.addEventListener('click', () => {
+    document.body.classList.remove('nav-open'); burger.setAttribute('aria-expanded', false); document.body.style.overflow = '';
+  }));
+
+  // reveal
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // counters (verified figures only)
+  const fmt = (v, el) => { const dec = +el.dataset.dec || 0; let s = v.toFixed(dec); if (dec && v < 1) s = s.replace(/^0/, ''); if (el.dataset.sep) s = Number(s).toLocaleString('en-US'); return s; };
+  const co = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; co.unobserve(e.target);
+    const el = e.target, to = parseFloat(el.dataset.count), from = parseFloat(el.dataset.from || 0), t0 = performance.now(), dur = 1600;
+    const step = now => { const p = Math.min((now - t0) / dur, 1), k = 1 - Math.pow(1 - p, 3); el.textContent = fmt(from + (to - from) * k, el); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), {threshold:.6});
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('[data-count]').forEach(el => co.observe(el));
+
+  // hero parallax (transform only — no layout work)
+  const px = document.querySelector('[data-parallax]');
+  if (px && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let tick = false;
+    addEventListener('scroll', () => { if (tick) return; tick = true; requestAnimationFrame(() => { if (scrollY < innerHeight) px.style.transform = `translate3d(0, ${scrollY * +px.dataset.parallax}px, 0)`; tick = false; }); }, {passive:true});
+  }
+
+  // industries: keep one panel open; follow hover on desktop
+  const inds = document.querySelectorAll('.ind');
+  inds.forEach(el => el.addEventListener('mouseenter', () => { inds.forEach(x => x.classList.remove('on')); el.classList.add('on'); }));
+
+  // mock form
+  const form = document.getElementById('form');
+  form.addEventListener('submit', e => { e.preventDefault(); if (form.checkValidity()) form.classList.add('sent'); else form.reportValidity(); });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
